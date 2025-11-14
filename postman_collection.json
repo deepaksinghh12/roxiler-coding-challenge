@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "FullStack Challenge APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Normal User\", \"email\": \"user1@example.com\", \"address\": \"Some address longer than twenty chars\", \"password\": \"Password@1\", \"role\": \"user\"}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/signup"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"user1@example.com\", \"password\": \"Password@1\"}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/auth/login"
+        }
+      }
+    }
+  ]
+}

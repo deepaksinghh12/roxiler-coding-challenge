@@ -1,0 +1,11 @@
+import { sequelize } from '../config/database';
+import { User } from './user.model';
+import { Store } from './store.model';
+import { Rating } from './rating.model';
+User.hasMany(Rating, { foreignKey: 'userId' });
+Rating.belongsTo(User, { foreignKey: 'userId' });
+Store.hasMany(Rating, { foreignKey: 'storeId' });
+Rating.belongsTo(Store, { foreignKey: 'storeId' });
+User.hasMany(Store, { foreignKey: 'ownerId' });
+Store.belongsTo(User, { foreignKey: 'ownerId', as: 'owner' });
+export { sequelize, User, Store, Rating };
